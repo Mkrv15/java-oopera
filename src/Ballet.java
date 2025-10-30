@@ -1,6 +1,6 @@
 
 
-public class Ballet extends MusicalShow{
+public class Ballet extends MusicalShow {
     protected Person choreographer;
 
     public Ballet(String title, int duration, Director director,

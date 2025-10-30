@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Actor extends Person{
+public class Actor extends Person {
 
     protected int height;
 
@@ -12,16 +12,22 @@ public class Actor extends Person{
 
     @Override
     public String toString() {
-        return name+" "+surname+ " ("+height+")";
+        return super.toString() + " (" + height + ")";
     }
+
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj) return true;
-        if(obj==null|| getClass()!=obj.getClass()) return false;
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
         Actor otherActor = (Actor) obj;
-        return (Objects.equals(otherActor.name,name)&&Objects.equals(otherActor.surname,surname)
-                &&Objects.equals(otherActor.gender,gender));
+        return (Objects.equals(otherActor.name, name) && Objects.equals(otherActor.surname, surname)
+                && Objects.equals(otherActor.gender, gender));
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, gender) * 31;
     }
 }
 
